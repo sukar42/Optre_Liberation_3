@@ -1,6 +1,0 @@
-player allowdamage false;
-player setPosATL [getPosATL pad select 0, getPosATL pad select 1, 16.911];
-sleep 5;
-player allowdamage true;
-
-

@@ -20,13 +20,13 @@ while { true } do {
 			huron = huron_typename createVehicle (getmarkerpos "ghost_spot");
 			huron enableSimulationGlobal false;
 			huron allowdamage false;
-			huron setDir 89.123;
+			huron setDir 0;
 			huron setposasl [(getpos lhd select 0) -9, (getpos lhd select 1) + 62, (18.5   + (getposasl lhd select 2))];
 		} else {
-			huron = huron_typename createVehicle ( getPosATL huronspawn );
+			huron = huron_typename createVehicle ( getpos huronspawn );
 			huron allowdamage false;
-			huron setPosATL ( getPosATL huronspawn );
-			huron setDir 45;
+			huron setpos ( getpos huronspawn );
+			huron setDir 0;
 		};
 	};
 
@@ -45,7 +45,6 @@ while { true } do {
 	sleep 1.5;
 
 	huron setDamage 0;
-	sleep 15;
 	huron allowdamage true;
 
 	if ( alive huron ) then {

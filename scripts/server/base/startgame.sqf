@@ -34,21 +34,14 @@ if ( count GRLIB_all_fobs == 0 ) then {
 				_fobbox allowDamage false;
 				_fobbox setposasl [(getpos lhd select 0) + 10, (getpos lhd select 1) + 62, (18.5   + (getposasl lhd select 2))];
 				clearItemCargoGlobal _fobbox;
-				_fobbox setDir 89.123;
+				_fobbox setDir 130;
 				sleep 1;
 				_fobbox enableSimulationGlobal true;
 				_fobbox allowDamage true;
 			} else {
 				_fobbox = FOB_box_typename createVehicle (getpos base_boxspawn);
-				clearWeaponCargoGlobal _fobbox;
-	            clearMagazineCargoGlobal _fobbox;
-	            clearItemCargoGlobal _fobbox;
-	            clearBackpackCargoGlobal _fobbox;
-				_fobbox allowDamage false;
-				_fobbox setPosATL (getPosATL base_boxspawn);
-				_fobbox setdir 89.123;
-				sleep 15;
-				_fobbox allowDamage true;
+				_fobbox setpos (getpos base_boxspawn);
+				_fobbox setdir 215;
 			};
 
 			[ [_fobbox, 3000 ] , "F_setMass" ] call BIS_fnc_MP;

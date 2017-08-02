@@ -1,13 +1,7 @@
 if ( isNil "GRLIB_respawn_loadout" ) then {
-	player allowdamage false;
-	//removeAllWeapons player;
-	//player linkItem "NVGoggles";
-	sleep 15;
-	player allowdamage true;
+	removeAllWeapons player;
+	player linkItem "NVGoggles";
 } else {
-    player allowdamage false;
 	sleep 4;
 	[ player, GRLIB_respawn_loadout ] call F_setLoadout;
-    sleep 15;
-	player allowdamage true;
 };

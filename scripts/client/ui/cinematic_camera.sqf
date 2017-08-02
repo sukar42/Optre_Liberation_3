@@ -259,7 +259,7 @@ while { cinematic_camera_started } do {
 					if ( GRLIB_isAtlasPresent ) then {
 						_nearest_sector = "BLUFOR LHD";
 					} else {
-						_nearest_sector = "Eridanus II, Eridanus system, 2515";
+						_nearest_sector = "BASE CHIMERA";
 					};
 				} else {
 					_nearest_sector = [300, _position ] call F_getNearestSector;

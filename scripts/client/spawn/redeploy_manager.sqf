@@ -21,13 +21,13 @@ _basenamestr = "";
 if ( GRLIB_isAtlasPresent ) then {
 	_basenamestr = "BLUFOR LHD";
 } else {
-	_basenamestr = "UNSC_Midsummer_Night";
+	_basenamestr = "BASE CHIMERA";
 };
 
 while { true } do {
 	waitUntil {
 		sleep 0.1;
-		( GRLIB_force_redeploy || (player distance (getmarkerpos "respawn_west") < 50) ) && vehicle player == player && alive player && !dialog && howtoplay == 0
+		( GRLIB_force_redeploy || (player distance (getmarkerpos GRLIB_respawn_marker) < 50) ) && vehicle player == player && alive player && !dialog && howtoplay == 0
 	};
 
 	fullmap = 0;
@@ -38,7 +38,8 @@ while { true } do {
 	if ( !GRLIB_fatigue ) then {
 		player enableStamina false;
 	};
-	player setCustomAimCoef 0.25;
+	player setCustomAimCoef 0.35;
+	player setUnitRecoilCoefficient 0.6;
 
 	_dialog = createDialog "liberation_deploy";
 	deploy = 0;
@@ -106,14 +107,8 @@ while { true } do {
 			};
 			if ( surfaceIsWater _objectpos) then {
 				respawn_object setposasl [_objectpos select 0, _objectpos select 1, 15];
-				player allowdamage false;
-				//player setPos [getPos pad select 0, getPos pad select 1, 1];
-				[] execVM "OnPlayerRespawn.sqf";
 			} else {
 				respawn_object setpos ((choiceslist select _oldsel) select 1);
-				player allowdamage false;
-				//player setPos [getPos pad select 0, getPos pad select 1, 1];
-				[] execVM "OnPlayerRespawn.sqf";
 			};
 			_startdist = 120;
 			_enddist = 120;
@@ -128,8 +123,12 @@ while { true } do {
 
 			"spawn_marker" setMarkerPosLocal (getpos respawn_object);
 			ctrlMapAnimClear ((findDisplay 5201) displayCtrl 251);
-			((findDisplay 5201) displayCtrl 251) ctrlMapAnimAdd [1.33, 1.2, getpos respawn_object];
-			((findDisplay 5201) displayCtrl 251) ctrlMapAnimAdd [1.33, 0.25, getpos respawn_object];
+			private _transition_map_pos = getpos respawn_object;
+			private _fullscreen_map_offset = 4000;
+			if(fullmap % 2 == 1) then {
+				_transition_map_pos = [(_transition_map_pos select 0) - _fullscreen_map_offset,  (_transition_map_pos select 1) + (_fullscreen_map_offset * 0.75), 0];
+			};
+			((findDisplay 5201) displayCtrl 251) ctrlMapAnimAdd [0, 0.3,_transition_map_pos];
 			ctrlMapAnimCommit ((findDisplay 5201) displayCtrl 251);
 
 			respawn_camera camSetPos [(getpos respawn_object select 0) - 70, (getpos respawn_object select 1) + _startdist, (getpos respawn_object select 2) + _alti];
@@ -146,7 +145,7 @@ while { true } do {
 				((findDisplay 5201) displayCtrl 251) ctrlSetPosition _standard_map_pos;
 			};
 			((findDisplay 5201) displayCtrl 251) ctrlCommit 0.2;
-
+			_oldsel = -1;
 		};
 
 		uiSleep 0.1;
@@ -164,9 +163,6 @@ while { true } do {
 				player setpos ([_truck, 5 + (random 3), random 360] call BIS_fnc_relPos)
 			} else {
 				_destpos = ((choiceslist select _idxchoice) select 1);
-				player allowdamage false;
-				//player setPos [getPos pad select 0, getPos pad select 1, 1];
-				[] execVM "OnPlayerRespawn.sqf";
 				player setpos [((_destpos select 0) + 5) - (random 10),((_destpos select 1) + 5) - (random 10),0];
 			};
 		};
