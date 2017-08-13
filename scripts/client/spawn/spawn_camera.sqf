@@ -7,7 +7,7 @@ _leadingzero_hour = "";
 _leadingzero_minute = "";
 if ( (date select 3) < 10 ) then { _leadingzero_hour = "0" };
 if ( (date select 4) < 10 ) then { _leadingzero_minute = "0" };
-_datestring = format [ "6/%5/2515 %4%5:%6%7", date select 0, date select 1, date select 2, _leadingzero_hour, date select 3, _leadingzero_minute, date select 4];
+_datestring = format [ "9/%5/2515 %4%5:%6%7", date select 0, date select 1, date select 2, _leadingzero_hour, date select 3, _leadingzero_minute, date select 4];
 
 private [ "_spawn_camera", "_startpos0", "_startpos1", "_endpos1","_startpos2","_endpos2","_startpos3","_endpos3"];
 

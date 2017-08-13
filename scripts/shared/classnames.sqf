@@ -6,7 +6,7 @@
 
 
 
-if ( isNil "FOB_typename" ) then { FOB_typename = "Land_OPTRE_hard_tent_urban"; };
+if ( isNil "FOB_typename" ) then { FOB_typename = "Land_OPTRE_mod_building_green"; };
 if ( isNil "FOB_box_typename" ) then { FOB_box_typename = "B_Slingload_01_Cargo_F"; };
 if ( isNil "FOB_truck_typename" ) then { FOB_truck_typename = "OPTRE_m1087_stallion_unsc_box"; };
 if ( isNil "Arsenal_typename" ) then { Arsenal_typename = "OPTRE_Ammo_Rack_Weapons"; };
@@ -63,10 +63,26 @@ if ( isNil "light_vehicles_overwrite" ) then { light_vehicles_overwrite = false 
 if ( light_vehicles_overwrite ) then { light_vehicles = light_vehicles_extension; } else { light_vehicles = light_vehicles + light_vehicles_extension; };
 
 heavy_vehicles = [
-	["B_APC_Wheeled_01_cannon_F",0,30,8],
-	["B_APC_Tracked_01_rcws_F",0,30,15],
-	["B_APC_Tracked_01_AA_F",0,40,15],
-	["B_MBT_01_mlrs_F",0,500,50]
+	["OPCAN_CGAPC",0,30,15],  
+	["OPCAN_APC_WDL",0,30,15],  
+	["OPCAN_APC_HW2",0,30,15],  
+	["OPCAN_APC_DES",0,30,15],  
+	["OPCAN_APC_WDL2",0,30,15],  
+	["OPCAN_APC_DES2",0,30,15], 
+	["OPTRE_M808B_UNSC",0,500,50],
+	["OPTRE_M808B_UNSC_tan",0,500,50],
+	["OPTRE_M808B_UNSC_blk",0,500,50],
+	["OPCAN_M808B_UNSCAR53",0,500,50],
+	["OPCAN_M808B_UNSCMC506",0,500,50],
+	["OPCAN_M808B_Doge",0,500,50],
+	["OPCAN_M808B_CGA",0,500,50],
+	["OPCAN_M808B_UNSCARW",0,500,50],
+	["OPCAN_M808B_UNSCARD",0,500,50],
+	["OPCAN_M808B_UNSCMCW",0,500,50],
+	["OPCAN_M808B_UNSCMCD",0,500,50],
+	["OPCAN_M808B_UNSCH5W",0,500,50],
+	["OPCAN_M808B_UNSCH5T",0,500,50],
+	["OPCAN_M808B_UNSCH5U",0,500,50]
 ];
 if ( isNil "heavy_vehicles_extension" ) then { heavy_vehicles_extension = [] };
 if ( isNil "heavy_vehicles_overwrite" ) then { heavy_vehicles_overwrite = false };
@@ -78,13 +94,45 @@ air_vehicles = [
 	["OPTRE_UNSC_hornet_desert_CAP",0,30,5],
 	["OPTRE_Pelican_unarmed_tan",0,0,20],
 	["OPTRE_Pelican_armed_tan",0,150,30],
+	["OPTRE_Pelican_AMX",0,0,20],
+	["OPTRE_Pelican_SVRC",0,0,20],
+	["OPTRE_Pelican_unarmed_UNSCAR",0,0,20],
+	["OPTRE_Pelican_unarmed_OPReach",0,0,20],
+	["OPTRE_Pelican_unarmed_OPCE",0,0,20],
+	["OPTRE_Pelican_unarmed_OPCEA",0,0,20],
+	["OPTRE_Pelican_unarmed_OPHaloWars",0,0,20],
+	["OPTRE_Pelican_unarmed_OPH3",0,0,20],
+	["OPTRE_Pelican_unarmed_landfall",0,0,20],
+	["OPTRE_Pelican_unarmed_419",0,0,20],
+	["OPTRE_Pelican_unarmed_OPH2",0,0,20],
+	["OPTRE_Pelican_unarmed_OPCG",0,0,20],
+	["OPTRE_Pelican_unarmed_WL",0,0,20],
+	["OPTRE_Pelican_unarmed_tan",0,0,20],
+	["OPTRE_Pelican_unarmed_green",0,0,20],
+	["OPTRE_Pelican_unarmed_black",0,0,20],
+	["OPTRE_Pelican_unarmed_marine",0,0,20],
+	["OPTRE_Pelican_unarmed",0,0,20],
+	["OPTRE_Pelican_AMX_A",0,150,30],
+	["OPTRE_Pelican_SVRC_A",0,150,30],
+	["OPTRE_Pelican_armed_UNSCAR",0,150,30],
+	["OPTRE_Pelican_armed_OPHaloWars",0,150,30],
+	["OPTRE_Pelican_armed_landfallA",0,150,30],
+	["OPTRE_Pelican_armed_419A",0,150,30],
+	["OPTRE_Pelican_armed_H2AR",0,150,30],
+	["OPTRE_Pelican_armed_H3AR",0,150,30],
+	["OPTRE_Pelican_armed_CEAAR",0,150,30],
+	["OPTRE_Pelican_armed_CEAR",0,150,30],
+	["OPTRE_Pelican_armed_HRAR",0,150,30],
+	["OPTRE_Pelican_armed_OP2A",0,150,30],
+	["OPTRE_Pelican_armed_green",0,150,30],
+	["OPTRE_Pelican_armed_tan",0,150,30],
+	["OPTRE_Pelican_armed_black",0,150,30],
+	["OPTRE_Pelican_armed_marine",0,150,30],
+	["OPTRE_Pelican_armed",0,150,30],
 	["OPTRE_Longsword_CAS",0,450,50],
 	["OPTRE_Longsword_Bomb",0,500,50],
 	["OPTRE_Longsword_Heavy",0,600,50],
-	["OPTRE_Longsword_Precision",0,600,50],
-	["B_UAV_01_F",0,0,5],
-	["B_UAV_02_F",0,250,20],
-	["B_UAV_02_CAS_F",0,250,20]
+	["OPTRE_Longsword_Precision",0,600,50]
 ];
 if ( isNil "air_vehicles_extension" ) then { air_vehicles_extension = [] };
 if ( isNil "air_vehicles_overwrite" ) then { air_vehicles_overwrite = false };
@@ -160,14 +208,22 @@ support_vehicles = [
 	[Respawn_truck_typename,20,0,5],
 	[FOB_box_typename,30,50,0],
 	[FOB_truck_typename,30,50,5],
-	["B_APC_Tracked_01_CRV_F",0,30,10],
-	["C_Offroad_01_repair_F",5,0,2],
-	["B_Truck_01_Repair_F",10,0,5],
-	["B_Truck_01_fuel_F",10,0,5],
-	["B_Truck_01_ammo_F",10,0,5],
-	["B_Slingload_01_Repair_F",5,0,0],
-	["B_Slingload_01_Fuel_F",5,0,0],
-	["B_Slingload_01_Ammo_F",5,0,0],
+	["OPCAN_ARWPM_R",10,0,5],
+	["OPCAN_ARDPM_R",10,0,5],
+	["OPCAN_MCWPM_R",10,0,5],
+	["OPCAN_MCDPM_R",10,0,5],
+	["OPCAN_CGAPM_R",10,0,5],
+	["OPCAN_ARWPM_F",10,0,5],
+	["OPCAN_ARDPM_F",10,0,5],
+	["OPCAN_MCWPM_F",10,0,5],
+	["OPCAN_MCDPM_F",10,0,5],
+	["OPCAN_CGAPM_F",10,0,5],
+	["OPCAN_ARWPM_A",10,0,5],
+	["OPCAN_ARDPM_A",10,0,5],
+	["OPCAN_MCWPM_A",10,0,5],
+	["OPCAN_MCDPM_A",10,0,5],
+	["OPCAN_CGAPM_A",10,0,5],
+	["OPTRE_M313_UNSC",0,50,10],
 	["Box_NATO_AmmoVeh_F",0,154,0],
 	["Box_East_AmmoVeh_F",0,115,0]
 ];
@@ -190,15 +246,15 @@ if ( count blufor_squad_para == 0 ) then { blufor_squad_para = [ "OPTRE_UNSC_ODS
 if ( isNil "blufor_squad_inf_light" ) then { blufor_squad_inf_light = [] };
 if ( count blufor_squad_inf_light == 0 ) then { blufor_squad_inf_light = [ "OPTRE_UNSC_Army_Soldier_SquadLead_DES","B_Soldier_TL_F","B_Soldier_GL_F","B_soldier_AR_F","B_Soldier_GL_F","B_medic_F","B_Soldier_LAT_F","B_Soldier_F","B_Soldier_F"]; };
 if ( isNil "uavs" ) then { uavs = [] }; uavs = [] + uavs + [ "B_UAV_01_F","B_UAV_02_F","B_UAV_02_CAS_F","B_UGV_01_F","B_UGV_01_rcws_F" ];
-if ( isNil "elite_vehicles_extension" ) then { elite_vehicles_extension = [] }; elite_vehicles = [] + elite_vehicles_extension + ["B_UGV_01_rcws_F","B_MBT_01_mlrs_F","B_UAV_02_F","B_UAV_02_CAS_F","OPTRE_Longsword_Precision","OPTRE_Longsword_Heavy","OPTRE_Longsword_CAS","OPTRE_UNSC_hornet_desert_CAP","OPTRE_Pelican_armed_tan","OPTRE_Longsword_Bomb"];
+if ( isNil "elite_vehicles_extension" ) then { elite_vehicles_extension = [] }; elite_vehicles = [] + elite_vehicles_extension + ["OPTRE_M808B_UNSC_tan","OPTRE_M808B_UNSC_blk","OPCAN_M808B_UNSCAR53","OPCAN_M808B_UNSCMC506","OPCAN_M808B_Doge","OPCAN_M808B_CGA","OPCAN_M808B_UNSCARW","OPCAN_M808B_UNSCARD","OPCAN_M808B_UNSCMCW","OPCAN_M808B_UNSCMCD","OPCAN_M808B_UNSCH5W","OPCAN_M808B_UNSCH5T","OPCAN_M808B_UNSCH5U","OPTRE_M313_UNSC","OPTRE_Longsword_Precision","OPTRE_Longsword_Heavy","OPTRE_Longsword_CAS","OPTRE_UNSC_hornet_desert_CAP","OPTRE_Pelican_armed_tan","OPTRE_Longsword_Bomb"];
 if ( isNil "ai_resupply_sources_extension" ) then { ai_resupply_sources_extension = [] };
-ai_resupply_sources = [] + ai_resupply_sources_extension + [ Respawn_truck_typename, huron_typename, Arsenal_typename, "B_Slingload_01_Ammo_F", "B_APC_Tracked_01_CRV_F", "B_Truck_01_ammo_F", "JNS_Skycrane_Pod_Ammo_BLU_Black" ];
+ai_resupply_sources = [] + ai_resupply_sources_extension + [ Respawn_truck_typename, huron_typename, Arsenal_typename, "OPTRE_M313_UNSC", "OPCAN_ARWPM_A", "OPCAN_ARDPM_A", "OPCAN_MCWPM_A", "OPCAN_MCDPM_A", "OPCAN_CGAPM_A", "JNS_Skycrane_Pod_Ammo_BLU_Black" ];
 if ( isNil "vehicle_repair_sources_extension" ) then { vehicle_repair_sources_extension = [] };
-vehicle_repair_sources = [] + vehicle_repair_sources_extension + [ "B_APC_Tracked_01_CRV_F", "C_Offroad_01_repair_F", "B_Truck_01_Repair_F", "B_Slingload_01_Repair_F", "JNS_Skycrane_Pod_Repair_BLU_Black" ];
+vehicle_repair_sources = [] + vehicle_repair_sources_extension + [ "OPTRE_M313_UNSC", "OPCAN_CGAPM_R", "OPCAN_MCDPM_R", "OPCAN_MCWPM_R", "OPCAN_ARDPM_R", "OPCAN_ARWPM_R", "JNS_Skycrane_Pod_Repair_BLU_Black" ];
 if ( isNil "vehicle_rearm_sources_extension" ) then { vehicle_rearm_sources_extension = [] };
-vehicle_rearm_sources = [] + vehicle_rearm_sources_extension + [ "B_APC_Tracked_01_CRV_F", "B_Truck_01_ammo_F", "B_Slingload_01_Ammo_F", "JNS_Skycrane_Pod_Ammo_BLU_Black" ];
+vehicle_rearm_sources = [] + vehicle_rearm_sources_extension + [ "OPTRE_M313_UNSC", "OPCAN_ARWPM_A", "OPCAN_ARDPM_A", "OPCAN_MCWPM_A", "OPCAN_MCDPM_A", "OPCAN_CGAPM_A", "JNS_Skycrane_Pod_Ammo_BLU_Black" ];
 if ( isNil "vehicle_refuel_sources_extension" ) then { vehicle_refuel_sources_extension = [] };
-vehicle_refuel_sources = [] + vehicle_refuel_sources_extension +  [ "B_APC_Tracked_01_CRV_F", "B_Truck_01_fuel_F", "B_Slingload_01_Fuel_F" ];
+vehicle_refuel_sources = [] + vehicle_refuel_sources_extension +  [ "OPTRE_M313_UNSC", "OPCAN_ARWPM_F", "OPCAN_ARDPM_F", "OPCAN_MCWPM_F", "OPCAN_MCDPM_F", "OPCAN_CGAPM_F" ];
 squads = [
 	[blufor_squad_inf_light,20,0,0],
 	[blufor_squad_inf,25,0,0],
@@ -369,19 +425,24 @@ if ( isNil "civilians_overwrite" ) then { civilians_overwrite = false };
 if ( civilians_overwrite ) then { civilians = civilians_extension; } else { civilians = civilians + civilians_extension; };
 
 civilian_vehicles = [
-	"OPTRE_Genet_Yellow",
 	"C_Hatchback_01_sport_F",
-	"OPTRE_M12_CIV2",
+	"C_Hatchback_01_F",
 	"C_Offroad_01_F",
 	"C_SUV_01_F",
-	"OPTRE_M12_CIV",
-	"OPTRE_Genet_Blue",
 	"C_Van_01_transport_F",
+	"I_C_Van_01_transport_F",
 	"C_Van_01_box_F",
 	"C_Van_01_fuel_F",
-	"OPTRE_Genet_Green",
+	"OPTRE_M12_CIV",
+	"OPTRE_M12_CIV2",
 	"OPTRE_Genet",
-	"OPTRE_Genet_Orange"
+	"OPTRE_Genet_Green",
+	"OPTRE_Genet_Orange",
+	"OPTRE_Genet_Black",
+	"OPTRE_Genet_Yellow",
+	"OPTRE_Genet_Blue",
+	"OPTRE_Genet_Cyan",
+	"OPTRE_Genet_Purple"
 ];
 if ( isNil "civilian_vehicles_extension" ) then { civilian_vehicles_extension = [] };
 if ( isNil "civilian_vehicles_overwrite" ) then { civilian_vehicles_overwrite = false };
@@ -442,7 +503,40 @@ box_transport_config = [
 	[ "O_Truck_03_transport_F", -6.5, [0,	-0.8,	0.4], [0,	-2.4,	0.4], [0,	-4.0,	0.4] ],
 	[ "O_Truck_03_covered_F", -6.5, [0,	-0.8,	0.4], [0,	-2.4,	0.4], [0,	-4.0,	0.4] ],
 	[ "OPTRE_Pelican_armed_tan", -7.5, [0,	2.0,	-1], [0,	0.6,	-1], [0,	-1.0, -1] ],
-	[ "OPTRE_Pelican_unarmed_tan", -7.5, [0,	2.0,	-1], [0,	0.6,	-1], [0,	-1.0, -1] ]
+	[ "OPTRE_Pelican_AMX", -7.5, [0,	2.0,	-1], [0,	0.6,	-1], [0,	-1.0, -1] ],
+	[ "OPTRE_Pelican_SVRC", -7.5, [0,	2.0,	-1], [0,	0.6,	-1], [0,	-1.0, -1] ],
+	[ "OPTRE_Pelican_unarmed_UNSCAR", -7.5, [0,	2.0,	-1], [0,	0.6,	-1], [0,	-1.0, -1] ],
+	[ "OPTRE_Pelican_unarmed_OPReach", -7.5, [0,	2.0,	-1], [0,	0.6,	-1], [0,	-1.0, -1] ],
+	[ "OPTRE_Pelican_unarmed_OPCE", -7.5, [0,	2.0,	-1], [0,	0.6,	-1], [0,	-1.0, -1] ],
+	[ "OPTRE_Pelican_unarmed_OPCEA", -7.5, [0,	2.0,	-1], [0,	0.6,	-1], [0,	-1.0, -1] ],
+	[ "OPTRE_Pelican_unarmed_OPHaloWars", -7.5, [0,	2.0,	-1], [0,	0.6,	-1], [0,	-1.0, -1] ],
+	[ "OPTRE_Pelican_unarmed_OPH3", -7.5, [0,	2.0,	-1], [0,	0.6,	-1], [0,	-1.0, -1] ],
+	[ "OPTRE_Pelican_unarmed_landfall", -7.5, [0,	2.0,	-1], [0,	0.6,	-1], [0,	-1.0, -1] ],
+	[ "OPTRE_Pelican_unarmed_419", -7.5, [0,	2.0,	-1], [0,	0.6,	-1], [0,	-1.0, -1] ],
+	[ "OPTRE_Pelican_unarmed_OPH2", -7.5, [0,	2.0,	-1], [0,	0.6,	-1], [0,	-1.0, -1] ],
+	[ "OPTRE_Pelican_unarmed_OPCG", -7.5, [0,	2.0,	-1], [0,	0.6,	-1], [0,	-1.0, -1] ],
+	[ "OPTRE_Pelican_unarmed_WL", -7.5, [0,	2.0,	-1], [0,	0.6,	-1], [0,	-1.0, -1] ],
+	[ "OPTRE_Pelican_unarmed_tan", -7.5, [0,	2.0,	-1], [0,	0.6,	-1], [0,	-1.0, -1] ],
+	[ "OPTRE_Pelican_unarmed_green", -7.5, [0,	2.0,	-1], [0,	0.6,	-1], [0,	-1.0, -1] ],
+	[ "OPTRE_Pelican_unarmed_black", -7.5, [0,	2.0,	-1], [0,	0.6,	-1], [0,	-1.0, -1] ],
+	[ "OPTRE_Pelican_unarmed_marine", -7.5, [0,	2.0,	-1], [0,	0.6,	-1], [0,	-1.0, -1] ],
+	[ "OPTRE_Pelican_unarmed", -7.5, [0,	2.0,	-1], [0,	0.6,	-1], [0,	-1.0, -1] ],
+	[ "OPTRE_Pelican_AMX_A", -7.5, [0,	2.0,	-1], [0,	0.6,	-1], [0,	-1.0, -1] ],
+	[ "OPTRE_Pelican_SVRC_A", -7.5, [0,	2.0,	-1], [0,	0.6,	-1], [0,	-1.0, -1] ],
+	[ "OPTRE_Pelican_armed_UNSCAR", -7.5, [0,	2.0,	-1], [0,	0.6,	-1], [0,	-1.0, -1] ],
+	[ "OPTRE_Pelican_armed_OPHaloWars", -7.5, [0,	2.0,	-1], [0,	0.6,	-1], [0,	-1.0, -1] ],
+	[ "OPTRE_Pelican_armed_landfallA", -7.5, [0,	2.0,	-1], [0,	0.6,	-1], [0,	-1.0, -1] ],
+	[ "OPTRE_Pelican_armed_419A", -7.5, [0,	2.0,	-1], [0,	0.6,	-1], [0,	-1.0, -1] ],
+	[ "OPTRE_Pelican_armed_H2AR", -7.5, [0,	2.0,	-1], [0,	0.6,	-1], [0,	-1.0, -1] ],
+	[ "OPTRE_Pelican_armed_H3AR", -7.5, [0,	2.0,	-1], [0,	0.6,	-1], [0,	-1.0, -1] ],
+	[ "OPTRE_Pelican_armed_CEAAR", -7.5, [0,	2.0,	-1], [0,	0.6,	-1], [0,	-1.0, -1] ],
+	[ "OPTRE_Pelican_armed_CEAR", -7.5, [0,	2.0,	-1], [0,	0.6,	-1], [0,	-1.0, -1] ],
+	[ "OPTRE_Pelican_armed_HRAR", -7.5, [0,	2.0,	-1], [0,	0.6,	-1], [0,	-1.0, -1] ],
+	[ "OPTRE_Pelican_armed_OP2A", -7.5, [0,	2.0,	-1], [0,	0.6,	-1], [0,	-1.0, -1] ],
+	[ "OPTRE_Pelican_armed_green", -7.5, [0,	2.0,	-1], [0,	0.6,	-1], [0,	-1.0, -1] ],
+	[ "OPTRE_Pelican_armed_black", -7.5, [0,	2.0,	-1], [0,	0.6,	-1], [0,	-1.0, -1] ],
+	[ "OPTRE_Pelican_armed_marine", -7.5, [0,	2.0,	-1], [0,	0.6,	-1], [0,	-1.0, -1] ],
+	[ "OPTRE_Pelican_armed", -7.5, [0,	2.0,	-1], [0,	0.6,	-1], [0,	-1.0, -1] ]
 ];
 if ( isNil "box_transport_config_extension" ) then { box_transport_config_extension = [] };
 box_transport_config = [] + box_transport_config + box_transport_config_extension;

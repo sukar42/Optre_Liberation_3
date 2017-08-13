@@ -37,15 +37,25 @@ while { true } do {
 
 	{
 		_zgm = _x;
+		_zgm  addEventHandler [
+	"CuratorObjectRegistered",
+	{
+		_classes = _this select 1;
+		_costs = [];
+		{
+			_cost = if (_x isKindOf "ModuleMusic_F") then {[true,0.1]} else {[false,0]}; 
+			_costs = _costs + [_cost];
+		} forEach _classes;
+		_costs
+	}
+];
 		_zgm addCuratorEditableObjects [_zeusunits,true];
 		_zgm removeCuratorEditableObjects [_units_to_remove,true];
 
 		_zgm  setCuratorCoef ["edit", -1e8];
-		_zgm  setCuratorCoef ["place", -1e8];
 		_zgm  setCuratorCoef ["synchronize", 0];
 		_zgm  setCuratorCoef ["delete", 0];
 		_zgm  setCuratorCoef ["destroy", -1e8];
-
 	} foreach allCurators;
 
 	sleep 10;
